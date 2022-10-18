@@ -7,6 +7,7 @@ using UnityEditor;
 
 public class CommandLineTests
 {
+#if UNITY_EDITOR
     [MenuItem(("PerformanceTest/Gen Code"))]
     public static void GenCode()
     {
@@ -56,7 +57,7 @@ public class CommandLineTests
         }
     }
 
-    [MenuItem("PerformanceTest/run Test")]
+    [MenuItem("PerformanceTest/Run Test")]
     public static void RunTest()
     {
         Tester tester = new Tester(
@@ -73,4 +74,5 @@ public class CommandLineTests
 
         while (enumerator.MoveNext()) { }
     }
+#endif
 }
